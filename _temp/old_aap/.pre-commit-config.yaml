@@ -1,0 +1,35 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  # Disabling the separate yamllint as it can now be done by ansible-lint with our config moved to TLD.
+  # - repo: https://github.com/adrienverge/yamllint.git
+  #   rev: v1.26.3
+  #   hooks:
+  #     - id: yamllint
+  #       entry: "yamllint"
+  #       types: [yaml]
+  - repo: https://github.com/ansible/ansible-lint.git
+    rev: v24.2.1
+    hooks:
+      # see discussions here about what arguments are used, and behavior
+      # https://github.com/ansible/ansible-lint/issues/649
+      # Roles will trigger an "unknown file type"
+      # https://github.com/ansible/ansible-lint/issues/808
+      - id: ansible-lint
+        pass_filenames: false
+        always_run: true
+        entry: "ansible-lint"
+        args:
+          - "--profile=production"
+        additional_dependencies:
+          - "ansible-core>=2.13"
+          - "yamllint>=1.26,<2.0"
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.12.1
+    hooks:
+      - id: markdownlint-cli2
+...
