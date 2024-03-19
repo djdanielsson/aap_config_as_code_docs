@@ -1,4 +1,6 @@
 title: "Ansible Automation Platform Configuration as Code Docs"
+plugins:
+  - jekyll-relative-links
 collections:
   collections:
     output: true

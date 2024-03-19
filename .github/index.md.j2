@@ -38,6 +38,10 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 |================
 
+{% for each in controller_config %}
+[{{ each }}](_collection/controller_configuration{{ each }})
+{% endfor %}
+
 [appendix]
 == Contributing to this Documentation
 We welcome community contributions to this documentation, or any of the mentioned collections. If you find problems, please open an issue and consider creating a PR against this, or any relevant, repository. More information about contributing can be found in our link:CONTRIBUTE.adoc[Contribution Guidelines].
