@@ -1,5 +1,5 @@
 title: "Ansible Automation Platform Configuration as Code Docs"
-theme: jekyll-docs-theme
+theme: documentation-theme-jekyll
 plugins:
   - jekyll-relative-links
 collections:
