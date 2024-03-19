@@ -1,3 +1,4 @@
+---
 = Ansible Automation Platform Configuration as Code Collections
 include::_style/render.adoc[]
 
