@@ -39,7 +39,7 @@ jobs:
       - name: Clone repo ee_utilities
         run: git clone https://github.com/redhat-cop/ee_utilities.git _temp/ee_utilities
       - name: Get all readme's
-        run: export mypath=$(pwd); cd _temp/; for i in $(ls); do cd "$i"/roles ; for y in $(ls); do cd "$y"; sed -i '1i ---' README.md; cat README.md; mv README.md "$mypath"/_collections/"$i"/"$y".md; cd "$mypath"/_temp/"$i"/roles; done; cd "$mypath"/_temp; done
+        run: export mypath=$(pwd); cd _temp/; for i in $(ls); do cd "$i"/roles ; for y in $(ls); do cd "$y"; sed -i '1i ---' README.md; sed -i 's/:---:|/---|/g' cat README.md; mv README.md "$mypath"/_collections/"$i"/"$y".md; cd "$mypath"/_temp/"$i"/roles; done; cd "$mypath"/_temp; done
       - name: Install Ansible
         run: pip install ansible-core
       - name: Run Ansible
