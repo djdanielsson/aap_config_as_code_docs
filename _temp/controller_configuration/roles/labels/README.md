@@ -1,4 +1,5 @@
 ---
+---
 
 # controller_configuration.labels
 
