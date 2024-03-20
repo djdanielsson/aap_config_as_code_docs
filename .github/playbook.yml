@@ -4,9 +4,9 @@
   connection: local
   gather_facts: false
   tasks:
-    - name: Create temporary file
+    - name: Create temporary direcotry
       ansible.builtin.tempfile:
-        state: file
+        state: directory
         suffix: temp
       register: r_tempfile
 
