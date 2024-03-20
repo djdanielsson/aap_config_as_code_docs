@@ -123,7 +123,7 @@ Links to other Validated Configuration Collections for Ansible Automation Platfo
 * [virtualenv_migrate.md](collections/ee_utilities/virtualenv_migrate.html)
 
 ## Contributing to this Documentation
-We welcome community contributions to this documentation, or any of the mentioned collections. If you find problems, please open an issue and consider creating a PR against this, or any relevant, repository. More information about contributing can be found in our [Contribution Guidelines](CONTRIBUTE.md).
+We welcome community contributions to this documentation, or any of the mentioned collections. If you find problems, please open an issue and consider creating a PR against this, or any relevant, repository. More information about contributing can be found in our [Contribution Guidelines](CONTRIBUTE.html).
 
 We have a community meeting every 4 weeks. Find the agenda in the issues and the calendar invitation below:
 
