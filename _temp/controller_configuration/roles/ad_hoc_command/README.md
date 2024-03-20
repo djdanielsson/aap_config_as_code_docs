@@ -1,6 +1,3 @@
----
----
----
 # controller_configuration.ad_hoc_command
 
 ## Description
@@ -35,12 +32,32 @@ If Both variables are not set, secure logging defaults to false.
 The role defaults to False as normally the add ad hoc commands task does not include sensitive information.
 controller_configuration_ad_hoc_command_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_ad_hoc_command_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
+|`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
 ## Data Structure
 
 ### Ad Hoc Command Variables
 
-
+|Variable Name|Default Value|Required|Type|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|`job_type`|"run"|no|str|Job_type to use for the ad hoc command. Either run or check.|
+|`inventory`|""|yes|str|Inventory to use for the ad hoc command.|
+|`limit`|`False`|no|str|Limit to use for the ad hoc command.|
+|`credential`|""|yes|str|Credential to use for ad hoc command.|
+|`execution_environment`|""|no|str|Execution Environment to use for ad hoc command.|
+|`module_name`|""|str|yes|The Ansible module to execute.|
+|`module_args`|`False`|no|str|The arguments to pass to the module.|
+|`forks`|0|yes|int|The number of forks to use for this ad hoc execution.|
+|`verbosity`|0|no|int|Verbosity level for this ad hoc command run|
+|`extra_vars`|`False`|no|dict|Extra variables to use for the ad hoc command.|
+|`become_enabled`|""|no|bool|If the become flag should be set.|
+|`diff_mode`|""|no|bool|Show the changes made by Ansible tasks where supported|
+|`wait`|`False`|no|bool|Wait for the command to complete.|
+|`interval`|2|no|int|The interval to request an update from controller.|
+|`timeout`|""|no|int|If waiting for the command to complete this will abort after this amount of seconds.|
 
 ### Standard Ad Hoc Command Data Structure
 
