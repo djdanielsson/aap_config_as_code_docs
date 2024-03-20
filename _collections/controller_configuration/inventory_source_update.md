@@ -2,6 +2,7 @@
 ---
 ---
 ---
+---
 # controller_configuration.inventory_source_update
 
 ## Description

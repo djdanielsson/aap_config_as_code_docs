@@ -2,6 +2,7 @@
 ---
 ---
 ---
+---
 # infra.aap_utilities.aap_ocp_install
 
 A role to install Ansible Automation Platform (AAP) 2.x on OpenShift using the operator.
