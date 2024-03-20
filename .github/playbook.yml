@@ -13,35 +13,35 @@
     - name: Clone controller_configuration
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/controller_configuration.git
-        dest: "{{ r_tempfile['path'] }}/controller_configuration"
+        dest: "{{ r_tempfile['path'] }}"
         single_branch: true
         version: devel
 
     - name: Clone galaxy_collection
       ansible.builtin.git:
         repo: https://github.com/ansible/galaxy_collection.git
-        dest: "{{ r_tempfile['path'] }}/galaxy_collection"
+        dest: "{{ r_tempfile['path'] }}"
         single_branch: true
         version: devel
 
     - name: Clone eda_configuration
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/eda_configuration.git
-        dest: "{{ r_tempfile['path'] }}/eda_configuration"
+        dest: "{{ r_tempfile['path'] }}"
         single_branch: true
         version: devel
 
     - name: Clone aap_utilities
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/aap_utilities.git
-        dest: "{{ r_tempfile['path'] }}/aap_utilities"
+        dest: "{{ r_tempfile['path'] }}"
         single_branch: true
         version: devel
 
     - name: Clone ee_utilities
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/ee_utilities.git
-        dest: "{{ r_tempfile['path'] }}/ee_utilities"
+        dest: "{{ r_tempfile['path'] }}"
         single_branch: true
         version: devel
 
