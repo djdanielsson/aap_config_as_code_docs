@@ -1,5 +1,3 @@
----
-
 # controller_configuration.credentials
 
 ## Description
