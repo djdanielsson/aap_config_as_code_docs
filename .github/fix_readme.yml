@@ -22,6 +22,15 @@
     state: absent
   loop: "{{ roles_list }}"
 
+- name: Remove join(',') that causes issues
+  ansible.builtin.replace:
+    path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
+    regexp: "{{ _regex }}"
+    replace: ''
+  loop: "{{ roles_list }}"
+  vars:
+    _regex: \| map\(attribute='name'\) \| join\(','\)
+
 - name: Update readme
   ansible.builtin.lineinfile:
     path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
