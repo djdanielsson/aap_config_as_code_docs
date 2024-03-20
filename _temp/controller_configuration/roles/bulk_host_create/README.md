@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
----
-
->>>>>>> 0b1f6bd093067f2efd592772777e9eb4499c5d98
 # controller_configuration.bulk_host_create
 
 ## Description
