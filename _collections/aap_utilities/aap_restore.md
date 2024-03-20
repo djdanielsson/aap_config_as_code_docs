@@ -1,8 +1,4 @@
----
-layout: default
----
-
-# infra.aap_utilities.aap\_restore
+# infra.aap\_utilities.aap\_restore
 
 Ansible role to restore a backup of Ansible Automation Platform.
 
@@ -47,3 +43,9 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ## Author Information
 
 Sean Sullivan
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

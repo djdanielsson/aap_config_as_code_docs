@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.ad_hoc_command
 
 ## Description
@@ -109,3 +105,9 @@ controller_ad_hoc_commands:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

@@ -77,7 +77,31 @@ NOTE: Further documentation for these collections will be stored here.
 * [workflow_job_templates.md](collections/controller_configuration/workflow_job_templates.html)
 * [workflow_launch.md](collections/controller_configuration/workflow_launch.html)
 
+* [ansible_config.md](collections/galaxy_collection/ansible_config.html)
+* [collection.md](collections/galaxy_collection/collection.html)
+* [collection_remote.md](collections/galaxy_collection/collection_remote.html)
+* [collection_repository.md](collections/galaxy_collection/collection_repository.html)
+* [collection_repository_sync.md](collections/galaxy_collection/collection_repository_sync.html)
+* [dispatch.md](collections/galaxy_collection/dispatch.html)
+* [ee_image.md](collections/galaxy_collection/ee_image.html)
+* [ee_namespace.md](collections/galaxy_collection/ee_namespace.html)
+* [ee_registry.md](collections/galaxy_collection/ee_registry.html)
+* [ee_registry_index.md](collections/galaxy_collection/ee_registry_index.html)
+* [ee_registry_sync.md](collections/galaxy_collection/ee_registry_sync.html)
+* [ee_repository.md](collections/galaxy_collection/ee_repository.html)
+* [ee_repository_sync.md](collections/galaxy_collection/ee_repository_sync.html)
+* [group.md](collections/galaxy_collection/group.html)
+* [group_roles.md](collections/galaxy_collection/group_roles.html)
+* [namespace.md](collections/galaxy_collection/namespace.html)
+* [publish.md](collections/galaxy_collection/publish.html)
+* [repository.md](collections/galaxy_collection/repository.html)
+* [repository_sync.md](collections/galaxy_collection/repository_sync.html)
+* [role.md](collections/galaxy_collection/role.html)
+* [user.md](collections/galaxy_collection/user.html)
 
+* [credential.md](collections/eda_config/credential.html)
+* [project.md](collections/eda_config/project.html)
+* [project_sync.md](collections/eda_config/project_sync.html)
 
 * [aap_backup.md](collections/aap_utilities/aap_backup.html)
 * [aap_certs.md](collections/aap_utilities/aap_certs.html)
@@ -90,6 +114,8 @@ NOTE: Further documentation for these collections will be stored here.
 * [git_ssh_setup.md](collections/aap_utilities/git_ssh_setup.html)
 * [kerberos.md](collections/aap_utilities/kerberos.html)
 
+* [ee_builder.md](collections/ee_utilities/ee_builder.html)
+* [virtualenv_migrate.md](collections/ee_utilities/virtualenv_migrate.html)
 
 [appendix]
 ## Contributing to this Documentation

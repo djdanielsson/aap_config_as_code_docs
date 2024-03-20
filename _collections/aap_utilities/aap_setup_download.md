@@ -1,8 +1,4 @@
----
-layout: default
----
-
-# infra.aap_utilities.aap_setup_download
+# infra.aap_utilities.aap\_setup\_download
 
 A role to download the latest z-version of the AAP setup tarball for a given minor version (e.g. 2.1 at time of writing).
 
@@ -50,3 +46,9 @@ Combined with the role `aap_setup_prepare`, the following code will download and
 ## Author Information
 
 Eric Lavarde <elavarde@redhat.com>, Red Hat Consulting, Principal Architect
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

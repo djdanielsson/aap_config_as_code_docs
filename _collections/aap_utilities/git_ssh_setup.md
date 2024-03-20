@@ -1,8 +1,4 @@
----
-layout: default
----
-
-# infra.aap_utilities.git_ssh_setup
+# infra.aap\_utilities.git\_ssh\_setup
 
 Creates a minimal Git server which can be used over SSH. It isn't meant as a full blown Git server,
 but just for demonstration and learning purposes, and can be installed directly on the AAP servers.
@@ -39,3 +35,9 @@ We've assumed that it will be created directly on the Controller server for demo
 ## Author Information
 
 Create an [issue at GitHub](https://github.com/redhat-cop/aap_utilities/issues) if you want to contact us.
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

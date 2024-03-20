@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.instances
 
 ## Description
@@ -18,7 +14,16 @@ Currently:
 
 ## Variables
 
-
+|Variable Name|Default Value|Required|Description|Example|
+|:---|:---:|:---:|:---|:---|
+|`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
+|`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
+|`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
+|`controller_username`|""|no|Admin User on the Ansible Controller Server. Either username / password or oauthtoken need to be specified.||
+|`controller_password`|""|no|Controller Admin User's password on the Ansible Controller Server. This should be stored in an Ansible Vault at vars/controller-secrets.yml or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_oauthtoken`|""|no|Controller Admin User's token on the Ansible Controller Server. This should be stored in an Ansible Vault at or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_request_timeout`|`10`|no|Specify the timeout in seconds Ansible should use in requests to the controller host.||
+|`controller_instances`|`see below`|yes|Data structure describing your instances Described below.||
 
 ### Enforcing defaults
 
@@ -31,7 +36,10 @@ Enabling this will enforce configurtion without specifying every option in the c
 
 'controller_configuration_instances_enforce_defaults' defaults to the value of 'controller_configuration_enforce_defaults' if it is not explicitly called. This allows for enforced defaults to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
-
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_instances_enforce_defaults`|`False`|no|Whether or not to enforce default option values on only the applications role|
+|`controller_configuration_enforce_defaults`|`False`|no|This variable enables enforced default values as well, but is shared across multiple roles, see above.|
 
 ### Secure Logging Variables
 
@@ -40,7 +48,10 @@ If Both variables are not set, secure logging defaults to false.
 The role defaults to False as normally the add instances task does not include sensitive information.
 controller_configuration_instances_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
-
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_instances_secure_logging`|`False`|no|Whether or not to include the sensitive instance groups role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
+|`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
 ### Asynchronous Retry Variables
 
@@ -49,13 +60,29 @@ If neither of the retries or delay or retries are set, they will default to thei
 This allows for all items to be created, then checked that the task finishes successfully.
 This also speeds up the overall role.
 
-
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
+|`controller_configuration_instances_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
+|`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
+|`controller_configuration_instances_async_delay`|`controller_configuration_async_delay`|no|This sets the delay between retries for the role.|
+|`controller_configuration_async_dir`|`null`|no|Sets the directory to write the results file for async tasks. The default value is set to `null` which uses the Ansible Default of `/root/.ansible_async/`.|
 
 ## Data Structure
 
 ### Instance Variables
 
-
+|Variable Name|Default Value|Required|Type|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|`hostname`|""|yes|str|Hostname of this instance.|
+|`capacity_adjustment`|""|float|no|Capacity adjustment between 0 and 1.|
+|`enabled`|False|no|bool|If true, the instance will be enabled and used.|
+|`managed_by_policy`|False|no|bool|If true, will be managed by instance group policy.|
+|`node_type`|""|no|str|Role that this node plays in the mesh. Most likely Execution. Current options are 'execution'.|
+|`node_state`|""|no|str|Indicates the current life cycle stage of this instance. Current options are 'installed' and 'deprovisioning'.|
+|`listener_port`|""|no|int|Port that Receptor will listen for incoming connections on.|
+|`peers`|[]|no|list|List of peers to connect outbound to. Only configurable for hop and execution nodes.|
+|`peers_from_control_nodes`|False|no|bool|If enabled, control plane nodes will automatically peer to this node.|
 
 ### Standard Instance Data Structure
 
@@ -99,3 +126,9 @@ controller_instances:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

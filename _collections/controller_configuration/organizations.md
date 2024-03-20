@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.organizations
 
 ## Description
@@ -18,6 +14,19 @@ Currently:
 
 ## Variables
 
+|Variable Name|Default Value|Required|Description|Example|
+|:---|:---:|:---:|:---|:---|
+|`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
+|`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
+|`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
+|`controller_username`|""|no|Admin User on the Ansible Controller Server. Either username / password or oauthtoken need to be specified.||
+|`controller_password`|""|no|Controller Admin User's password on the Ansible Controller Server. This should be stored in an Ansible Vault at vars/controller-secrets.yml or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_oauthtoken`|""|no|Controller Admin User's token on the Ansible Controller Server. This should be stored in an Ansible Vault at or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_request_timeout`|`10`|no|Specify the timeout in seconds Ansible should use in requests to the controller host.||
+|`controller_organizations`|`see below`|yes|Data structure describing your organization or organizations Described below. Alias: organizations ||
+|`assign_galaxy_credentials_to_org`|`True`|no|Boolean to indicate whether credentials should be assigned or not. It should be noted that credentials must exist before adding it. The dispatch role will set this to `false`, before re-running the role with it set to `true`. ||
+|`assign_default_ee_to_org`|`True`|no|Boolean to indicate whether default execution environment should be assigned or not. It should be noted that execution environment must exist before adding it. The dispatch role will set this to `false`, before re-running the role with it set to `true`. ||
+|`assign_notification_templates_to_org`|`True`|no|Boolean to indicate whether notification templates should be assigned or not. It should be noted that the templates must exist before adding them. The dispatch role will set this to `false`, before re-running the role with it set to `true`. ||
 
 ### Enforcing defaults
 
@@ -30,6 +39,10 @@ Enabling this will enforce configurtion without specifying every option in the c
 
 'controller_configuration_organizations_enforce_defaults' defaults to the value of 'controller_configuration_enforce_defaults' if it is not explicitly called. This allows for enforced defaults to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_organizations_enforce_defaults`|`False`|no|Whether or not to enforce default option values on only the applications role|
+|`controller_configuration_enforce_defaults`|`False`|no|This variable enables enforced default values as well, but is shared across multiple roles, see above.|
 
 ### Secure Logging Variables
 
@@ -38,6 +51,10 @@ If Both variables are not set, secure logging defaults to false.
 The role defaults to False as normally the add organization task does not include sensitive information.
 controller_configuration_organizations_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of configuration roles with a single variable, or for the user to selectively use it.
 
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_organizations_secure_logging`|`False`|no|Whether or not to include the sensitive Organization role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
+|`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
 ### Asynchronous Retry Variables
 
@@ -46,6 +63,13 @@ If neither of the retries or delay or retries are set, they will default to thei
 This allows for all items to be created, then checked that the task finishes successfully.
 This also speeds up the overall role.
 
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
+|`controller_configuration_organizations_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
+|`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
+|`controller_configuration_organizations_async_delay`|`controller_configuration_async_delay`|no|This sets the delay between retries for the role.|
+|`controller_configuration_async_dir`|`null`|no|Sets the directory to write the results file for async tasks. The default value is set to `null` which uses the Ansible Default of `/root/.ansible_async/`.|
 
 ## Organization Data Structure
 
@@ -53,6 +77,20 @@ This role accepts two data models. A simple straightforward easy to maintain mod
 
 ### Organization Variables
 
+|Variable Name|Default Value|Required|Type|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|`name`|""|yes|str|Name of Organization|
+|`description`|`False`|no|str|Description of  of Organization.|
+|`custom_virtualenv`|""|no|str|Local absolute file path containing a custom Python virtualenv to use.|
+|`max_hosts`|""|no|int|The max hosts allowed in this organization.|
+|`instance_groups`|""|no|list|list of Instance Groups for this Organization to run on.|
+|`galaxy_credentials`|""|no|list|The credentials to use with private automationhub.|
+|`default_environment`|""|no|str|Default Execution Environment to use for jobs owned by the Organization.|
+|`notification_templates_started`|""|no|list|The notifications on started to use for this organization in a list.|
+|`notification_templates_success`|""|no|list|The notifications on success to use for this organization in a list.|
+|`notification_templates_error`|""|no|list|The notifications on error to use for this organization in a list.|
+|`notification_templates_approvals`|""|no|list|The notifications for approval to use for this organization in a list.|
+|`state`|`present`|no|str|Desired state of the resource.|
 
 ### Standard Organization Data Structure model
 
@@ -152,3 +190,9 @@ controller_organizations:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

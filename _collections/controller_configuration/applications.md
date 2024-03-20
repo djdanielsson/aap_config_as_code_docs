@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.applications
 
 ## Description
@@ -149,3 +145,9 @@ controller_applications:
 ## Author
 
 [Mike Shriver](https://github.com/mshriver)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

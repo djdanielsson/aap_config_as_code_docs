@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.bulk_host_create
 
 ## Description
@@ -144,3 +140,9 @@ controller_bulk_hosts:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

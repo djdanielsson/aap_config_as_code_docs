@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # infra.aap_utilities.aap_remove
 
 Ansible role to remove instances of AAP.
@@ -52,3 +48,9 @@ An example is below.
 ## Author Information
 
 Tom Page
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

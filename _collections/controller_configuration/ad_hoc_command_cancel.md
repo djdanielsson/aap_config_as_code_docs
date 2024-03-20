@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.ad_hoc_command_cancel
 
 ## Description
@@ -100,3 +96,9 @@ controller_ad_hoc_commands_cancel:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

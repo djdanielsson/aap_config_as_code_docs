@@ -1,8 +1,4 @@
----
-layout: default
----
-
-# infra.aap_utilities.aap\_certs
+# infra.aap\_utilities.aap\_certs
 
 Ansible role to install SSL certificates for AAP automation controller and/or automation hub and/or EDA controller.
 
@@ -82,3 +78,9 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ## Author Information
 
 Tom Page
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK

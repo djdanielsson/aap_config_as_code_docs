@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # controller_configuration.object_diff
 
 An ansible role to manage the object diff of the AWX or Automation Controller configuration. This role leverage the controller_object_diff.py lookup plugin of the infra.controller_configuration, comparing two lists, one taken directly from the API and the other one from the git repository, and it could be used to delete objects in the AWX or Automation Controller that are not defined in the git repository list.
@@ -16,6 +12,13 @@ An ansible role to manage the object diff of the AWX or Automation Controller co
 
 The following Variables set the organization where should be applied the configuration, the absolute or relative of the directory structure where the variables will be stored and the life-cycle environment to use.
 
+| Variable Name | Default Value | Required | Description |
+| :------------ | :-----------: | :------: | :---------- |
+| `controller_api_plugin` | `ansible.controller` | yes | Full path for the controller_api_plugin to be used. <br/> Can have two possible values: <br/>&nbsp;&nbsp;- awx.awx.controller_api             # For the community Collection version <br/>&nbsp;&nbsp;- ansible.controller.controller_api  # For the Red Hat Certified Collection version |
+| `drop_user_external_accounts` | `False` | no | When is true, all users will be taken to compare with SCM configuration as code |
+| `protect_not_empty_orgs` | `N/A` | no | When is true, orgs which are not empty, will not be removed |
+| `query_controller_api_max_objects` | 10000 | no | Sets the maximum number of objects to be returned from the API |
+<!--- | `drop_teams` | `False` | no | When is true, all teams will be taken to compare with SCM configuration as code | -->
 
 ## Role Tags
 
@@ -132,3 +135,9 @@ GPLv3+
 - Issues:
   - Users and Teams must be managed by users with privileges.
   - Due to the Team Object doesn't return from API any field related to external account on Controller API, which help to filter if the teams comes from an External Source and not to be deleted by the Object Diff Ansible automation process.
+
+# BEGIN ANSIBLE MANAGED BLOCK
+---
+layout: default
+---
+# END ANSIBLE MANAGED BLOCK
