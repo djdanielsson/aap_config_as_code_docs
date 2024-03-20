@@ -1,5 +1,6 @@
 ---
 ---
+---
 
 # controller_configuration.credential_types
 
