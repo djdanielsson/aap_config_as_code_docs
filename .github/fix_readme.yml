@@ -28,7 +28,7 @@
 - name: Copy and rename readme
   ansible.builtin.copy:
     src: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
-    dest: "../_collections/{{ outer_item }}/{{ item }}.html"
+    dest: "../_collections/{{ outer_item }}/{{ item }}.md"
     remote_src: true
     mode: "0644"
   loop: "{{ roles_list }}"
