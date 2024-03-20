@@ -13,7 +13,7 @@
     - name: Clone controller_configuration
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/controller_configuration.git
-        dest: "{{ r_tempfile['path'] }}/"
+        dest: "{{ r_tempfile['path'] }}/controller_configuration"
         single_branch: true
         version: devel
 
