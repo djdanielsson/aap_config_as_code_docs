@@ -28,19 +28,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # - name: Clone repo controller_configuration
-      #   run: mkdir _temp; git clone https://github.com/redhat-cop/controller_configuration.git _temp/controller_configuration
-      # - name: Clone repo galaxy_collection
-      #   run: git clone https://github.com/ansible/galaxy_collection.git _temp/galaxy_collection
-      # - name: Clone repo eda_configuration
-      #   run: git clone https://github.com/redhat-cop/eda_configuration.git _temp/eda_configuration
-      # - name: Clone repo aap_utilities
-      #   run: git clone https://github.com/redhat-cop/aap_utilities.git _temp/aap_utilities
-      # - name: Clone repo ee_utilities
-      #   run: git clone https://github.com/redhat-cop/ee_utilities.git _temp/ee_utilities
-      # - name: Get all readme's
-        # run: export mypath=$(pwd); cd _temp/; for i in $(ls); do cd "$i"/roles ; for y in $(ls); do cd "$y"; sed -i -r 's/:?---{1,121}:?\|/---------|/g' README.md; sed -i '1i ---' README.md; cat README.md; mv README.md "$mypath"/_collections/"$i"/"$y".md; cd "$mypath"/_temp/"$i"/roles; done; cd "$mypath"/_temp; done
-        # run: export mypath=$(pwd); cd _temp/; for i in $(ls); do cd "$i"/roles ; for y in $(ls); do cd "$y"; cp README.md "$mypath"/_collections/"$i"/"$y".md; cd "$mypath"/_temp/"$i"/roles; done; cd "$mypath"/_temp; done
       - name: Install Ansible
         run: pip install ansible-core
       - name: Run Ansible

@@ -40,30 +40,35 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
 {% if controller_config is defined %}
+### Controller Configuration:
 {% for each in controller_config | sort %}
 * [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if galaxy_collection is defined %}
+### Ansible Hub Configuration:
 {% for each in galaxy_collection | sort %}
 * [{{ each }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if eda_config is defined %}
+### Event Driven Ansible Configuration:
 {% for each in eda_config | sort %}
 * [{{ each }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if aap_utilities is defined %}
+### AAP Installation Utilities:
 {% for each in aap_utilities | sort %}
 * [{{ each }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if ee_utilities is defined %}
+### Execution Environment Utilities:
 {% for each in ee_utilities | sort %}
 * [{{ each }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
@@ -75,7 +80,7 @@ We welcome community contributions to this documentation, or any of the mentione
 
 We have a community meeting every 4 weeks. Find the agenda in the issues and the calendar invitation below:
 
-[![Calendar](https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif)(https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics)]
+[[Calendar](https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif)(https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics)]
 
 ## Code of Conduct
 
