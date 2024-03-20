@@ -45,6 +45,8 @@ jobs:
         run: pip install ansible-core
       - name: Run Ansible
         run: cd .github; ansible-playbook playbook.yml
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
       - name: Bundle install
         run: bundle install
       - name: Setup Pages
