@@ -1,5 +1,6 @@
 ---
 ---
+---
 # infra.aap_utilities.aap_remove
 
 Ansible role to remove instances of AAP.
