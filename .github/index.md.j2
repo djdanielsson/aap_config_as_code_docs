@@ -43,19 +43,19 @@ NOTE: Further documentation for these collections will be stored here.
 * [{{ each }}](collections/controller_configuration/{{ each }})
 {% endfor %}
 
-% for each in galaxy_collection | sort %}
+{% for each in galaxy_collection | sort %}
 * [{{ each }}](collections/galaxy_collection/{{ each }})
 {% endfor %}
 
-% for each in eda_config | sort %}
+{% for each in eda_config | sort %}
 * [{{ each }}](collections/eda_config/{{ each }})
 {% endfor %}
 
-% for each in aap_utilities | sort %}
+{% for each in aap_utilities | sort %}
 * [{{ each }}](collections/aap_utilities/{{ each }})
 {% endfor %}
 
-% for each in ee_utilities | sort %}
+{% for each in ee_utilities | sort %}
 * [{{ each }}](collections/ee_utilities/{{ each }})
 {% endfor %}
 
