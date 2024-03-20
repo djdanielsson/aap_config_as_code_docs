@@ -16,10 +16,10 @@
   loop: "{{ r_roles['files'] | map(attribute='path') | flatten }}"
 
 - name: Update readme
-  ansible.builtin.blockinfile:
+  ansible.builtin.lineinfile:
     path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
-    prepend_newline: true
-    block: |
+    insertbefore: BOF
+    line: |
       ---
       layout: default
       ---
