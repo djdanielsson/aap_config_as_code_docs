@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.eda_configuration.credential
 
 ## Description
@@ -7,7 +11,6 @@ An Ansible Role to create Credentials in EDA Controller.
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`eda_host`|""|yes|URL to the EDA Controller (alias: `eda_hostname`)|127.0.0.1|
 |`eda_username`|""|yes|Admin User on the EDA Controller ||
 |`eda_password`|""|yes|EDA Controller Admin User's password on the EDA Controller Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
@@ -24,7 +27,6 @@ The role defaults to False as normally the add credential task does not include 
 eda_configuration_credential_secure_logging defaults to the value of eda_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of EDA Controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`eda_configuration_credential_secure_logging`|`True`|no|Whether or not to include the sensitive credential role tasks in the log.  Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`eda_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -36,7 +38,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`eda_configuration_async_retries`|50|no|This variable sets the number of retries to attempt for the role globally.|
 |`eda_configuration_credential_async_retries`|`eda_configuration_async_retries`|no|This variable sets the number of retries to attempt for the role.|
 |`eda_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -47,7 +48,6 @@ This also speeds up the overall role.
 ### Credential Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Credential name. Must be lower case containing only alphanumeric characters and underscores.|
 |`new_name`|""|yes|str|Setting this option will change the existing name (looked up via the name field.)|
 |`description`|""|yes|str|Description to use for the credential.|
@@ -61,7 +61,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 eda_credentials:
   - name: my_github_user
     description: my GitHub Credential
@@ -75,7 +74,6 @@ eda_credentials:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Add credential to EDA Controller
   hosts: localhost
   connection: local
@@ -103,9 +101,3 @@ eda_credentials:
 ## Author
 
 [Derek Waters](https://github.com/derekwaters/)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

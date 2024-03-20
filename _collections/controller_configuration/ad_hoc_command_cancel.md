@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.ad_hoc_command_cancel
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the add ad hoc commands cancel task does 
 controller_configuration_ad_hoc_command_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_ad_hoc_command_cancel_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command_cancel role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -42,7 +44,6 @@ controller_configuration_ad_hoc_command_secure_logging defaults to the value of 
 ### Ad Hoc Command Cancel Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`id`|""|yes|int|ID of the command to cancel Recommended to be in a separate list of ID's see example, defaults to output of ad_hoc_command_role of controller_ad_hoc_commands_output.|
 |`fail_if_not_running`|`False`|no|bool|Fail loudly if the I(command_id) can not be canceled.|
 |`interval`|1|no|int|The interval in seconds, to request an update from.|
@@ -53,7 +54,6 @@ controller_configuration_ad_hoc_command_secure_logging defaults to the value of 
 #### Yaml Example
 
 ```yaml
----
 controller_ad_hoc_commands_cancel:
   - id: 10
     fail_if_not_running: false
@@ -71,7 +71,6 @@ controller_ad_hoc_commands_cancel:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -96,9 +95,3 @@ controller_ad_hoc_commands_cancel:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

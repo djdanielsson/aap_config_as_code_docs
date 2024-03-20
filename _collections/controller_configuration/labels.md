@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.labels
 
 An Ansible role to create/update/remove labels for templates on Ansible Controller.
@@ -13,7 +17,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -31,7 +34,6 @@ The role defaults to False as normally the add labels task does not include sens
 controller_configuration_labels_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_labels_secure_logging`|`False`|no|Whether or not to include the sensitive Label role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -43,7 +45,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_labels_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -55,7 +56,6 @@ This also speeds up the overall role.
 ### Labels Variables
 
 |Variable Name|Default Value|Required|type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Name of this label.|
 |`new_name`|""|no|str|Setting this option will change the existing name (looked up via the name field).|
 |`organization`|`False`|no|str|Organization this label belongs to.|
@@ -84,7 +84,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 controller_labels:
   - name: Dev
     organization: Satellite
@@ -98,7 +97,6 @@ controller_labels:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -123,9 +121,3 @@ controller_labels:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

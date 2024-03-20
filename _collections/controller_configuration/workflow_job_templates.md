@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.workflow_job_templates
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -37,7 +40,6 @@ Enabling this will enforce configurtion without specifying every option in the c
 'controller_configuration_workflows_enforce_defaults' defaults to the value of 'controller_configuration_enforce_defaults' if it is not explicitly called. This allows for enforced defaults to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_workflows_enforce_defaults`|`False`|no|Whether or not to enforce default option values on only the applications role|
 |`controller_configuration_enforce_defaults`|`False`|no|This variable enables enforced default values as well, but is shared across multiple roles, see above.|
 
@@ -49,7 +51,6 @@ The role defaults to False as normally the add Workflow Job Templates task does 
 workflow_job_templates_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of genie roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`workflow_job_templates_secure_logging`|`False`|no|Whether or not to include the sensitive Workflow Job Templates role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -61,7 +62,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_workflow_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -73,7 +73,6 @@ This also speeds up the overall role.
 ### Variables For Workflow Job Template
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Name of Workflow Job Template|
 |`new_name`|""|str|no|Setting this option will change the existing name (looked up via the name field).|
 |`copy_from`|""|no|str|Name or id to copy the Workflow template from. This will copy an existing workflow and change any parameters supplied.|
@@ -110,7 +109,6 @@ This also speeds up the overall role.
 ### Variables For Workflow Job Template Node
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`workflow_job_template`|""|yes|str|The workflow job template the node exists in. Used for looking up the node, cannot be modified after creation.|
 |`identifier`|""|yes|str|An identifier for this node that is unique within its workflow. It is copied to workflow job nodes corresponding to this node. This functions the same as the name field for other resources, however if it is not set, it will be set to a random UUID4 value. Recommended to use Column and row numbers for identifiers such as Node401. [Refer to this documentation for more](https://github.com/ansible/awx/blob/devel/docs/workflow.md)|
 |`unified_job_template`|""|no|str|Name of unified job template to run in the workflow. Can be a job template, project, inventory source, etc. This parameter is mutually exclusive with approval_node.|
@@ -142,7 +140,6 @@ This also speeds up the overall role.
 ### Approval node dictionary
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Name of this workflow approval template.|
 |`description`|""|no|str|Optional description of this workflow approval template.|
 |`timeout`|0|no|int|The amount of time (in seconds) before the approval node expires and fails.|
@@ -151,7 +148,6 @@ This also speeds up the overall role.
 
 Refer to the [Controller Api Guide](https://docs.ansible.com/ansible-tower/latest/html/towerapi/api_ref.html#/Job_Templates/Job_Templates_job_templates_survey_spec_create) for more information about forming surveys
 |Variable Name|Variable Description|
-|:---:|:---:|
 |`name`|Name of the survey|
 |`description`|Description of the survey|
 |`spec`|List of survey items, each a dictionary containing the following fields|
@@ -181,7 +177,6 @@ Uses the variable 'simplified_workflow_nodes' to describe nodes as shown below.
 ##### Yaml Example
 
 ```yaml
----
 controller_workflows:
   - name: Simple workflow schema
     description: a basic workflow
@@ -239,7 +234,6 @@ This can be under the subvariable 'workflow_nodes' or under the subvariable 'rel
 ##### Yaml Export Example
 
 ```yaml
----
 controller_workflows:
   - name: Simple workflow schema
     description: a basic workflow
@@ -403,7 +397,6 @@ controller_workflows:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -429,9 +422,3 @@ controller_workflows:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

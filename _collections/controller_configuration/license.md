@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.license
 
 ## Description
@@ -17,7 +21,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -37,7 +40,6 @@ The role defaults to False as normally the add license task does not include sen
 controller_configuration_license_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_license_secure_logging`|`False`|no|Whether or not to include the sensitive license role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -50,7 +52,6 @@ The module and this role can use either a manifest file, or lookup the subscript
 ### License Variables for using mainfest
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`manifest_file`|""|no|obj|File path to a Red Hat subscription manifest (a .zip file)|
 |`manifest_url`|""|no|obj|URL containing a Red Hat subscription manifest (a .zip file)|
 |`manifest_content`|""|no|obj|Base64 encoded content of Red Hat subscription manifest|
@@ -65,7 +66,6 @@ The module and this role can use either a manifest file, or lookup the subscript
 ### License Variables for using Red Hat Subscription
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`filters`|"default values"|no|str|dict of filters to use to narrow the subscription. See example below for how to use this.|
 |`support_level`|"Self-Support"|no|str|DEPRECATED - changed to `manifest_file` (still works as an alias)|
 |`list_num`|0|no|int|List index of the subscription to use, if you want to overide the default, it is recomended to use the filters to limit the pools found.|
@@ -90,7 +90,6 @@ The module and this role can use either a manifest file, or lookup the subscript
 #### Yaml Example
 
 ```yaml
----
 controller_license:
   manifest_url: "https://fileserver.internal/controller_license.zip"
   manifest_username: admin
@@ -103,7 +102,6 @@ controller_license:
 ### Standard Manifest Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -124,7 +122,6 @@ controller_license:
 ### Standard Subscription lookup Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -150,9 +147,3 @@ controller_license:
 ## Author
 
 [Tom Page](https://github.com/Tompage1994)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.aap\_utilities.aap\_restore
 
 Ansible role to restore a backup of Ansible Automation Platform.
@@ -25,7 +29,6 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ```
 
 ```yaml
----
 - name: Restore AAP
   hosts: localhost
   become: true
@@ -43,9 +46,3 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ## Author Information
 
 Sean Sullivan
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

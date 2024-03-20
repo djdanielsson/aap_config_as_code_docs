@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.job_templates
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -37,7 +40,6 @@ Enabling this will enforce configurtion without specifying every option in the c
 'controller_configuration_job_templates_enforce_defaults' defaults to the value of 'controller_configuration_enforce_defaults' if it is not explicitly called. This allows for enforced defaults to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_job_templates_enforce_defaults`|`False`|no|Whether or not to enforce default option values on only the applications role|
 |`controller_configuration_enforce_defaults`|`False`|no|This variable enables enforced default values as well, but is shared across multiple roles, see above.|
 
@@ -49,7 +51,6 @@ The role defaults to False as normally the add job_template task does not includ
 controller_configuration_job_templates_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_job_templates_secure_logging`|`False`|no|Whether or not to include the sensitive Job Template role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -61,7 +62,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_job_templates_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -73,7 +73,6 @@ This also speeds up the overall role.
 ### Job Template Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Name of Job Template|
 |`new_name`|""|str|no|Setting this option will change the existing name (looked up via the name field).|
 |`copy_from`|""|no|str|Name or id to copy the job template from. This will copy an existing credential and change any parameters supplied.|
@@ -136,7 +135,6 @@ This also speeds up the overall role.
 Refer to the [controller Api Guide](https://docs.ansible.com/ansible-tower/latest/html/towerapi/api_ref.html#/Job_Templates/Job_Templates_job_templates_survey_spec_create) for more information about forming surveys
 
 |Variable Name|Variable Description|
-|:---:|:---:|
 |`name`|Name of the survey|
 |`description`|Description of the survey|
 |`spec`|List of survey items, each a dictionary containing the following fields|
@@ -196,7 +194,6 @@ Refer to the [controller Api Guide](https://docs.ansible.com/ansible-tower/lates
 #### Yaml Example
 
 ```yaml
----
 controller_templates:
 - name: Survey Template with vars
   job_type: run
@@ -278,7 +275,6 @@ controller_templates:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -303,9 +299,3 @@ controller_templates:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

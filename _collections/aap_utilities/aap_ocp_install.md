@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.aap_utilities.aap_ocp_install
 
 A role to install Ansible Automation Platform (AAP) 2.x on OpenShift using the operator.
@@ -12,7 +16,6 @@ In addition the kubernetes.core and redhat.openshift Ansible collections are req
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 | Variable Name              | Required | Default Value | Description                                                            |
-|----------------------------|:--------:|---------------|------------------------------------------------------------------------|
 | aap_ocp_install_namespace  | Yes      | None          | Namespace to create operator, controller, and hub in                   |
 | aap_ocp_install_connection | Yes      | None          | Dictionary containing keys defined in the `connection variables table` |
 | aap_ocp_install_operator   | Yes*     | None          | Dictionary containing keys defined in the `operator variables table`   |
@@ -25,7 +28,6 @@ If the variable is omitted the corresponding component will not be installed (e.
 ### aap_ocp_install_connection keys
 
 | Key Name       | Required | Default Value | Description                                                  |
-|----------------|:--------:|---------------|--------------------------------------------------------------|
 | host           | Yes      | None          | OCP cluster to create the AAP objects in                     |
 | username       | Yes      | None          | Username to use for authenticating with OCP                  |
 | password       | Yes      | None          | Password to use for authenticating with OCP                  |
@@ -34,7 +36,6 @@ If the variable is omitted the corresponding component will not be installed (e.
 ### aap_ocp_install_operator keys
 
 | Key Name | Required | Default Value | Description                                                         |
-|----------|:--------:|---------------|---------------------------------------------------------------------|
 | channel  | Yes      | None          | Channel to subscribe (e.g. stable-2.2 or stable-2.2-cluster-scoped) |
 | approval |          | Automatic     | Update approval method. Valid values are Automatic or Manual.       |
 
@@ -45,7 +46,6 @@ If the variable is omitted the corresponding component will not be installed (e.
 ### aap_ocp_install_controller keys
 
 | Key Name                     | Required | Default Value                           | Description                                                                                                            |
-|------------------------------|:--------:|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | instance_name                | Yes      | None                                    | Name of the controller instance to create                                                                              |
 | namespace                    |          | None                                    | Name of the namespace to create the controller instance in. If not specified `aap_ocp_install_namespace` will be used. |
 | admin_user                   |          | admin                                   | Username to use for the admin account                                                                                  |
@@ -60,7 +60,6 @@ If the variable is omitted the corresponding component will not be installed (e.
 | ### aap_ocp_install_hub keys |### aap_ocp_install_hub keys
 
 | Key Name      | Required | Default Value                    | Description                                     |
-|---------------|:--------:|----------------------------------|-------------------------------------------------|
 | instance_name | Yes      | None                             | Name of the hub instance to create              |
 | link_text     |          | Automation Hub (<INSTANCE_NAME>) | Text used for creating the OCP application link |
 
@@ -73,7 +72,6 @@ This role depends on the redhat.openshift and kubernetes.core collections.
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ```yml
----
 - name: Install AAP on OCP playbook
   hosts: localhost
   gather_facts: false
@@ -104,9 +102,3 @@ Including an example of how to use your role (for instance, with variables passe
 ## Author Information
 
 Brant Evans
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

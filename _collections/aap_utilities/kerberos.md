@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.aap\_utilities.kerberos
 
 ## Description
@@ -11,7 +15,6 @@ This role installs all required packages in order to facilitate authentication.
 ## Variables
 
 |Name|Required|Default Value|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`krb_realms`|yes|N/A|List of Dictionaries|Used for storing the realm(domain) name and its domain controllers.  A single domain controller can be specified if that is the only available option, but more than one is preferable. See example usage below.|
 |`krb_default_realm`|no|undefined|string|If a default realm(domain) is required to be specified this can be set.  Otherwise it remains unset in the krb5.conf.|
 |`krb_dns_lookup_realm`|yes|"false"|string|Whether or not to lookup DNS via realm.|
@@ -69,7 +72,6 @@ ensure that you have set them either on the server running the playbook, or in t
 ## Example Playbook
 
 ```yaml
----
 - hosts: controllers
 # If you need proxy settings to install packages from the internet:
 # The following 3 lines are optional
@@ -97,9 +99,3 @@ ensure that you have set them either on the server running the playbook, or in t
 ## Author
 
 [Andrew J. Huffman](https://github.com/ahuffman)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.inventory_source_update
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the inventory source update task does not
 controller_configuration_inventory_source_update_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_inventory_source_update_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -45,7 +47,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_inventory_source_update_async_retries`|`controller_configuration_async_retries`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -57,7 +58,6 @@ This also speeds up the overall role.
 ### Inventory Source Update Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|The name or id of the inventory source to update.|
 |`inventory`|""|yes|str|Name or id of the inventory that contains the inventory source(s) to update.|
 |`organization`|""|no|str|Name of the inventory source's inventory's organization.|
@@ -70,7 +70,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 controller_inventory_sources:
   - name: RHVM-01
     source: scm
@@ -91,7 +90,6 @@ controller_inventory_sources:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -117,9 +115,3 @@ controller_inventory_sources:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

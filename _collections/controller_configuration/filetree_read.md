@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.filetree_read
 
 An ansible role which reads variables from a hierarchical and scalable directory structure which is grouped based on the configuration code life-cycle. It could be used to run the role filetree_read to load variables followed by dispatch role to apply the configuration.
@@ -13,7 +17,6 @@ This role requires the [awx.awx](https://docs.ansible.com/ansible/latest/collect
 The following Variables set the organization where should be applied the configuration, the absolute or relative of the directory structure where the variables will be stored and the life-cycle environment to use.
 
 |Variable Name|Type|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`orgs`|String|Acme|yes|This variable sets the organization where should be applied the configuration.|
 |`dir_orgs_vars`|String|orgs_vars|yes|This variable sets the directory path where the variables will be store.|
 |`env:`|String|dev|yes|This variable sets the life-cycle environment to use.|
@@ -47,7 +50,6 @@ The following Variables set the organization where should be applied the configu
 - All variables should be taken from the awx or automation controller object roles from the infra.controller_configuration collection.
 
 ```yaml
----
 controller_templates:
   - name: "{{ orgs }} JT_Container_Group TEST DEMO First Push"
     description: "Template to  test Container Groups"
@@ -77,7 +79,6 @@ orgs_vars/env/
 
 $ $ ansible-vault view orgs_vars/env/demo-dev/configure_connection_controller_credentials.yml
 Vault password:
----
 vault_controller_username: 'ldap-admin-org1'
 vault_controller_password: 'password'
 vault_controller_hostname: controller-dev.lab.example.com
@@ -281,7 +282,6 @@ The role is designed to be used with tags, each tags correspond to an AWX or Aut
 ## Example Playbook
 
 ```yaml
----
 - hosts: all
   connection: local
   gather_facts: false
@@ -371,9 +371,3 @@ GPLv3+
 ## Author Information
 
 - [Silvio Perez](https://github.com/silvinux)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

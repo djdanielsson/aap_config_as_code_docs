@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.ee_utilities.ee_builder
 
 Ansible role use to build execution environments. This role invokes ansible builder and depends on certain variables or files being provided.
@@ -40,7 +44,6 @@ Best practice is to use the default images, unless needing to pull from another 
 ### Build Argument Defaults
 
 |Variable Name|Default Value|Required|Type|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|:---:|
 |`ee_builder_dir`|playbook_directory|no|str|The directory to store all build and context files.|'/tmp'|
 |`ee_builder_dir_clean`|true|no|bool|Whether to delete the build dir when done.|true|
 |`ee_container_runtime`|podman|no|str|container run time to use podman/docker.|podman|
@@ -66,13 +69,11 @@ This role takes a list of execution environments to describe a state.
 It takes variables from the following sections the list variables section.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ee_list`|`list`|yes|Data structure describing your Execution Environments Described below.|
 
 #### List variables for Execution environment definition
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`name`||yes|Name of the ee image to create. Only the name goes here, the namespace goes in the ee_registry_dest variable|
 |`tag`||no|Tag to use when pushing the image.|
 |`dependencies`|dict|no|This section allows you to describe any dependencies that will need to be installed into the final image. Reference [builder dependencies documentation](https://ansible.readthedocs.io/projects/builder/en/stable/definition/#dependencies), examples and our examples for its structure.|
@@ -87,7 +88,6 @@ It takes variables from the following sections the list variables section.
 These variables are only use in creating the Execution Environment 'controller_execution_environments' definition that is useable wtih the infra.controller_configuration role to push definitions to the Automation controller.
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`alt_name`|`name`|no|str|Alternate name of the ee image to create.|
 |`description`|""|no|str|Description to use for the execution environment.|
 |`organization`|""|no|str|The organization the execution environment belongs to.|
@@ -97,7 +97,6 @@ These variables are only use in creating the Execution Environment 'controller_e
 ### Registry Step defaults
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ee_registry_username`||no|Username to use when authenticating to destination registries.|
 |`ee_registry_password`||no|Password to use when authenticating to destination registries.|
 |`ee_registry_dest`||no|Path or URL where image will be pushed. Namespaces for containers go here. Examples: registry.redhat.io, registry.redhat.io/rh-custom |
@@ -117,7 +116,6 @@ ansible-playbook playbook.yml
 ```
 
 ```yaml
----
 - name: Playbook to create custom EE
   hosts: localhost
   gather_facts: false
@@ -177,7 +175,6 @@ ansible-playbook playbook.yml
 This is an example for building using automated pipelines like Gitlab or Azure Devops where the build container and other dependencies used for building the final artifact are destroyed after the pipeline is finished
 
 ```yaml
----
 - name: Playbook to create custom EE
   hosts: localhost
   gather_facts: false
@@ -260,9 +257,3 @@ This is an example for building using automated pipelines like Gitlab or Azure D
 ## Author Information
 
 Sean Sullivan and Jonathan Bouligny
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

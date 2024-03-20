@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.aap\_utilities.aap\_certs
 
 Ansible role to install SSL certificates for AAP automation controller and/or automation hub and/or EDA controller.
@@ -34,12 +38,6 @@ This is useful when you're using a secrets backend like HashiCorp Vault.
 **Note that these are each mutually exclusive with the variables above.**
 
 ```yaml
-aap_certs_controller_ssl_cert_content: "-----BEGIN CERTIFICATE----- xxxxxx -----END CERTIFICATE-----"
-aap_certs_controller_ssl_key_content: "-----BEGIN PRIVATE KEY----- xxxxxx -----END PRIVATE KEY-----"
-aap_certs_autohub_ssl_cert_content: "-----BEGIN CERTIFICATE----- xxxxxx -----END CERTIFICATE-----"
-aap_certs_autohub_ssl_key_content: "-----BEGIN PRIVATE KEY----- xxxxxx -----END PRIVATE KEY-----"
-aap_certs_eda_ssl_cert_content: "-----BEGIN CERTIFICATE----- xxxxxx -----END CERTIFICATE-----"
-aap_certs_eda_ssl_key_content: "-----BEGIN PRIVATE KEY----- xxxxxx -----END PRIVATE KEY-----"
 
 ```
 
@@ -58,7 +56,6 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ```
 
 ```yaml
----
 - name: Install AAP certificates
   hosts: aap_servers
   become: true
@@ -78,9 +75,3 @@ ansible-playbook playbook.yml -e @aap_vars.yml
 ## Author Information
 
 Tom Page
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

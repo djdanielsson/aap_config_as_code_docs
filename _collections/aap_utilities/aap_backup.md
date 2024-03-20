@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.aap\_utilities.backup
 
 Ansible role to backup Ansible Automation Platform.
@@ -24,7 +28,6 @@ ansible-playbook playbook.yml -e @aap_vars.yml controller
 ```
 
 ```yaml
----
 # Playbook to backup Automation controller
 
 - name: Backup Automation controller
@@ -44,9 +47,3 @@ ansible-playbook playbook.yml -e @aap_vars.yml controller
 ## Author Information
 
 Sean Sullivan
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

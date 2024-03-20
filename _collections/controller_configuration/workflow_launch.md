@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.workflow_launch
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the workflow launch task does not include
 controller_configuration_workflow_launch_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_workflow_launch_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -42,7 +44,6 @@ controller_configuration_workflow_launch_secure_logging defaults to the value of
 ### Workflow Job Launch Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|The name or id of the project to update.|
 |`organization`|""|no|str|Organization the workflow job template exists in. Used for lookup|
 |`inventory`|""|no|str|Inventory to use for the job ran with this workflow, only used if prompt for inventory is set.|
@@ -58,7 +59,6 @@ controller_configuration_workflow_launch_secure_logging defaults to the value of
 #### Yaml Example
 
 ```yaml
----
 controller_workflow_launch_jobs:
   - name: test-workflow
 
@@ -69,7 +69,6 @@ controller_workflow_launch_jobs:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -95,9 +94,3 @@ controller_workflow_launch_jobs:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

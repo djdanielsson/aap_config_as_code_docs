@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # infra.ee_utilities.virtualenv_migrate
 
 Use this role to create a list of python requirements from custom virtualenvs present in your AAP 1.2 cluster, after comparing those with requirements in Default Execution Environment.
@@ -24,7 +28,6 @@ podman on localhost
 ## Role variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`venv_migrate_default_ee_url`|`registry.redhat.io/ansible-automation-platform-24/ee-minimal-rhel9:latest`|no|"Registry link of the EE you want to compare requirements with"|`localhost/ee:latest`|
 |`registry_username`|None|yes(for default EE value)|username to sign in to the registry|`admin`|
 |`registry_password`|None|yes(for default EE value)|password to sign in to the registry|`pass`|
@@ -36,7 +39,6 @@ podman on localhost
 
 ```yaml
 # playbook to gather requirements from custom virtualenvs
----
 - name: Review custom virtualenvs and pull requirements
   hosts: tower
   become: true
@@ -50,7 +52,6 @@ podman on localhost
 
 ```yaml
 # playbook to create EE's from an existing tower.
----
 - name: Playbook to create custom EE
   hosts: tower
   gather_facts: false
@@ -100,9 +101,3 @@ podman on localhost
 ## Author Information
 
 Anshul Behl
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

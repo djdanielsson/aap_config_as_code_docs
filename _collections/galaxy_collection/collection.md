@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # galaxy.galaxy.collection
 
 ## Description
@@ -7,7 +11,6 @@ An Ansible Role to update, or destroy Automation Hub Collections.
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`ah_host`|""|yes|URL to the Automation Hub or Galaxy Server. (alias: `ah_hostname`)|127.0.0.1|
 |`ah_username`|""|yes|Admin User on the Automation Hub or Galaxy Server.||
 |`ah_password`|""|yes|Automation Hub Admin User's password on the Automation Hub Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
@@ -19,7 +22,6 @@ An Ansible Role to update, or destroy Automation Hub Collections.
 
 These are the sub options for the vars `ah_collections` which are dictionaries with the options you want. See examples for details.
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`namespace`|""|yes|Namespace name. Must be lower case containing only alphanumeric characters and underscores.|"awx"|
 |`name`|""|yes|Collection name. Must be lower case containing only alphanumeric characters and underscores.||
 |`version`|""|no|Collection Version. Must be lower case containing only alphanumeric characters and underscores. If not provided and 'auto_approve' true, will be derived from the path.||
@@ -42,7 +44,6 @@ The role defaults to False as normally the add repository task does not include 
 ah_configuration_repository_secure_logging defaults to the value of ah_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of automation hub configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_collection_secure_logging`|`False`|no|Whether or not to include the sensitive collection role tasks in the log.  Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`ah_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -53,7 +54,6 @@ ah_configuration_repository_secure_logging defaults to the value of ah_configura
 #### Yaml Example
 
 ```yaml
----
 ah_collections:
   - namespace: 'awx'
     name: 'awx'
@@ -71,7 +71,6 @@ ah_collections:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Add collection
   hosts: localhost
   connection: local
@@ -99,9 +98,3 @@ ah_collections:
 ## Author
 
 [Inderpal Tiwana](https://github.com/inderpaltiwana/)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

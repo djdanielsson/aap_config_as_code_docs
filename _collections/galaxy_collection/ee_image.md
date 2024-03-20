@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # galaxy.galaxy.ee_image
 
 ## Description
@@ -7,7 +11,6 @@ An Ansible Role to create execution environment images in Automation Hub.
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`ah_host`|""|yes|URL to the Automation Hub or Galaxy Server. (alias: `ah_hostname`)|127.0.0.1|
 |`ah_username`|""|yes|Admin User on the Automation Hub or Galaxy Server.||
 |`ah_password`|""|yes|Automation Hub Admin User's password on the Automation Hub Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
@@ -25,7 +28,6 @@ The role defaults to False as normally the add ee_image task does not include se
 ah_configuration_ee_image_secure_logging defaults to the value of ah_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of automation hub configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_ee_image_secure_logging`|`False`|no|Whether or not to include the sensitive Namespace role tasks in the log.  Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`ah_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -37,7 +39,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_async_retries`|50|no|This variable sets the number of retries to attempt for the role globally.|
 |`ah_configuration_ee_image_async_retries`|`ah_configuration_async_retries`|no|This variable sets the number of retries to attempt for the role.|
 |`ah_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -48,7 +49,6 @@ This also speeds up the overall role.
 ### EE Image Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|yes|str|Execution environment image name. Must be lower case containing only alphanumeric characters and underscores.|
 <!-- |`new_name`|""|yes|str|Setting this option will change the existing name (looked up via the name field.| -->
 |`append`|true|no|bool|Whether to append or replace the tags specified to the image.|
@@ -60,7 +60,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 ah_ee_images:
   - name: ansible-automation-platform-20-early-access/ee-supported-rhel8:2.0.0-15
     state: present
@@ -76,7 +75,6 @@ ah_ee_images:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Add ee_image to Automation Hub
   hosts: localhost
   connection: local
@@ -103,9 +101,3 @@ ah_ee_images:
 ## Author
 
 [Tom Page](https://github.com/Tompage1994/)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.bulk_host_create
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
 |`controller_username`|""|no|Admin User on the Ansible Controller Server. Either username / password or oauthtoken need to be specified.||
@@ -32,7 +35,6 @@ The role defaults to False as normally the add ******* task does not include sen
 controller_configuration_*******_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_bulk_hosts_secure_logging`|`False`|no|Whether or not to include the sensitive ******* role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -44,7 +46,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_bulk_hosts_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -56,14 +57,12 @@ This also speeds up the overall role.
 ### Bulk Host Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`hosts`|""|yes|list|List of hosts and host options to add to inventory. Documented below|
 |`inventory`|""|yes|str|Inventory name or ID the hosts should be made a member of.|
 
 ### Bulk Host Sub Options
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`name`|""|no|list|The name to use for the host.|
 |`description`|""|no|str|The description to use for the host.|
 |`enabled`|""|no|bool|If the host should be enabled.|
@@ -99,7 +98,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 controller_bulk_hosts:
   - inventory: localhost
     hosts:
@@ -115,7 +113,6 @@ controller_bulk_hosts:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -140,9 +137,3 @@ controller_bulk_hosts:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.jobs_cancel
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the task to cancel jobs does not include 
 controller_configuration_jobs_cancel_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_jobs_cancel_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -42,7 +44,6 @@ controller_configuration_jobs_cancel_secure_logging defaults to the value of con
 ### Cancel Jobs Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`id`|""|yes|int|ID of the job to cancel.|
 |`fail_if_not_running`|`False`|no|bool|Fail loudly if the job can not be canceled.|
 
@@ -51,7 +52,6 @@ controller_configuration_jobs_cancel_secure_logging defaults to the value of con
 #### Yaml Example
 
 ```yaml
----
 controller_cancel_jobs:
   - id: 10
 
@@ -62,7 +62,6 @@ controller_cancel_jobs:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -87,9 +86,3 @@ controller_cancel_jobs:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

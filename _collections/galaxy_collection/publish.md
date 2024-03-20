@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # galaxy.galaxy.publish
 
 ## Description
@@ -7,7 +11,6 @@ An Ansible Role to publish collections to Automation Hub or Galaxies.
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`ah_host`|""|yes|URL to the Automation Hub or Galaxy Server. (alias: `ah_hostname`)|127.0.0.1|
 |`ah_username`|""|yes|Admin User on the Automation Hub or Galaxy Server.||
 |`ah_password`|""|yes|Automation Hub Admin User's password on the Automation Hub Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
@@ -30,7 +33,6 @@ The role defaults to False as normally the add publish collections task does not
 ah_configuration_publish_secure_logging defaults to the value of ah_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of automation hub configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_publish_secure_logging`|`False`|no|Whether or not to include the sensitive publish collections role tasks in the log.  Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`ah_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -42,7 +44,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_async_retries`|50|no|This variable sets the number of retries to attempt for the role globally.|
 |`ah_configuration_publish_async_retries`|`ah_configuration_async_retries`|no|This variable sets the number of retries to attempt for the role.|
 |`ah_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -53,7 +54,6 @@ This also speeds up the overall role.
 ### ah_collections Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`collection_name`|""|yes|str|Name of collection, normally the last part before the / in a git url.|
 |`git_url`|""|no|str|Url to git repo. Required if collection_local_path not set|
 |`version`|""|no|str|Git ref to pull. Will default to default branch if unset. Can specify tag, branch or commit ref here.|
@@ -66,7 +66,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 ah_collections:
   - collection_name: cisco.iosxr
     git_url: https://github.com/ansible-collections/cisco.iosxr
@@ -79,7 +78,6 @@ ah_auto_approve: true
 ### Standard Role Usage
 
 ```yaml
----
 - name: Build and add collection to Automation Hub
   hosts: localhost
   connection: local
@@ -107,9 +105,3 @@ ah_auto_approve: true
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan/)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

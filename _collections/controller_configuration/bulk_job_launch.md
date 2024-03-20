@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.bulk_job_launch
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the add ******* task does not include sen
 controller_configuration_*******_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_bulk_job_launch_secure_logging`|`False`|no|Whether or not to include the sensitive bulk_job_launch role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -45,7 +47,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
 |`controller_configuration_bulk_job_launch_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
 |`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -56,7 +57,6 @@ This also speeds up the overall role.
 ### Bulk Host Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`jobs`|""|yes|list|List of jobs and job options to launch. Documented below|
 |`description`|""|no|str|Optional description of this bulk job.|
 |`organization`|""|no|str|Organization for the bulk job. Affects who can see the resulting bulk job. If not provided, will use the organization the user is in.|
@@ -72,7 +72,6 @@ This also speeds up the overall role.
 ### Bulk Job Launch Sub Options
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`unified_job_template`|""|yes|int|The ID of object that is to be launched. Example objects include projects, inventory sources, and templates. Required if state='present.|
 |`inventory`|""|no|str|Inventory to use for the job, only used if prompt for inventory is set.|
 |`execution_environment`|Job Template default|no|str|Execution Environment applied as a prompt. Job Template default used if not set. Only allowed if `ask_execution_environment_on_launch` set to true on Job Template|
@@ -105,7 +104,6 @@ This also speeds up the overall role.
 #### Yaml Example
 
 ```yaml
----
 ```
 
 ## Playbook Examples
@@ -113,7 +111,6 @@ This also speeds up the overall role.
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -138,9 +135,3 @@ This also speeds up the overall role.
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

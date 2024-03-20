@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # group_roles
 
 ## Description
@@ -7,7 +11,6 @@ An Ansible Role to add roles to groups in Automation Hub.
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---:|:---:|:---:|:---:|:---:|
 |`ah_host`|""|yes|URL to the Automation Hub or Galaxy Server. (alias: `ah_hostname`)|127.0.0.1|
 |`ah_username`|""|yes|Admin User on the Automation Hub or Galaxy Server.||
 |`ah_password`|""|yes|Automation Hub Admin User's password on the Automation Hub Server.  This should be stored in an Ansible Vault at vars/tower-secrets.yml or elsewhere and called from a parent playbook.||
@@ -25,7 +28,6 @@ The role defaults to False as normally the add group task does not include sensi
 ah_configuration_group_secure_logging defaults to the value of ah_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of automation hub configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_group_secure_logging`|`False`|no|Whether or not to include the sensitive Namespace role tasks in the log.  Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`ah_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -37,7 +39,6 @@ This allows for all items to be created, then checked that the task finishes suc
 This also speeds up the overall role.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`ah_configuration_async_retries`|50|no|This variable sets the number of retries to attempt for the role globally.|
 |`ah_configuration_group_async_retries`|`ah_configuration_async_retries`|no|This variable sets the number of retries to attempt for the role.|
 |`ah_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
@@ -48,7 +49,6 @@ This also speeds up the overall role.
 ### Group Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`groups`|""|yes|str| List of Group Names to apply the roles to. If the group does not exist, it will be created. Must be lower case containing only alphanumeric characters and underscores.|
 |`role_list`|""|yes|str|The list of roles to add to or remove from the given group. See below for options.|
 |`state`|`present`|no|str|Desired state of the group. Can be `present`, `enforced`, or `absent`. If absent, then the module deletes the given combination of roles for given groups. If present, then the module creates the group roles if it does not already exist. If enforced, then the module will remove any group role combinations not provided.|
@@ -72,7 +72,6 @@ If no targets are listed, the roles are applied globally to the groups.
 Targets consist of the following.
 
 |Target|Description|
-|:---:|:---:|
 |`collection_namespaces`|List of collection namespaces to apply the roles to.|
 |`collection_remotes`|List of collection remotes to apply the roles to.|
 |`collection_repositories`|List of collection repositories to apply the roles to.|
@@ -82,7 +81,6 @@ Targets consist of the following.
 #### Yaml Example
 
 ```yaml
----
 ah_group_roles:
   - state: present
     groups:
@@ -124,7 +122,6 @@ ah_group_roles:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Add group roles to Automation Hub
   hosts: localhost
   connection: local
@@ -151,9 +148,3 @@ ah_group_roles:
 ## Author
 
 [Tom Page](https://github.com/Tompage1994/)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.ad_hoc_command
 
 ## Description
@@ -15,7 +19,6 @@ Currently:
 ## Variables
 
 |Variable Name|Default Value|Required|Description|Example|
-|:---|:---:|:---:|:---|:---|
 |`controller_state`|"present"|no|The state all objects will take unless overridden by object default|'absent'|
 |`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
 |`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
@@ -33,7 +36,6 @@ The role defaults to False as normally the add ad hoc commands task does not inc
 controller_configuration_ad_hoc_command_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
 |Variable Name|Default Value|Required|Description|
-|:---:|:---:|:---:|:---:|
 |`controller_configuration_ad_hoc_command_secure_logging`|`False`|no|Whether or not to include the sensitive ad_hoc_command role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
 |`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
@@ -42,7 +44,6 @@ controller_configuration_ad_hoc_command_secure_logging defaults to the value of 
 ### Ad Hoc Command Variables
 
 |Variable Name|Default Value|Required|Type|Description|
-|:---:|:---:|:---:|:---:|:---:|
 |`job_type`|"run"|no|str|Job_type to use for the ad hoc command. Either run or check.|
 |`inventory`|""|yes|str|Inventory to use for the ad hoc command.|
 |`limit`|`False`|no|str|Limit to use for the ad hoc command.|
@@ -64,7 +65,6 @@ controller_configuration_ad_hoc_command_secure_logging defaults to the value of 
 #### Yaml Example
 
 ```yaml
----
 controller_ad_hoc_commands:
   - job_type: run
     inventory: localhost
@@ -79,7 +79,6 @@ controller_ad_hoc_commands:
 ### Standard Role Usage
 
 ```yaml
----
 - name: Playbook to configure ansible controller post installation
   hosts: localhost
   connection: local
@@ -105,9 +104,3 @@ controller_ad_hoc_commands:
 ## Author
 
 [Sean Sullivan](https://github.com/sean-m-sullivan)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

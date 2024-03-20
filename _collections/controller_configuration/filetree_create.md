@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.filetree_create
 
 The role `filetree_create` is intended to be used as the first step to begin using the Configuration as Code on Ansible Tower or Ansible Automation Platform, when you already have a running instance of any of them. Obviously, you also could start to write your objects as code from scratch, but the idea behind the creation of that role is to simplify your lives and make that task a little bit easier.
@@ -11,7 +15,6 @@ This role requires the [awx.awx](https://docs.ansible.com/ansible/latest/collect
 The following variables are required for that role to work properly:
 
 | Variable Name | Default Value | Required | Type | Description |
-| :------------ | :-----------: | :------: | :------: | :---------- |
 | `controller_api_plugin` | `ansible.controller` | yes | str | Full path for the controller_api_plugin to be used. <br/> Can have two possible values: <br/>&nbsp;&nbsp;- awx.awx.controller_api             # For the community Collection version <br/>&nbsp;&nbsp;- ansible.controller.controller_api  # For the Red Hat Certified Collection version|
 | `organization_filter` | N/A | no | str | Exports only the objects belonging to the specified organization (applies to all the objects that can be assigned to an organization). |
 | `organization_id` | N/A | no | int | Alternative to `organization_filter`, but specifiying the current organization's ID to filter by. Exports only the objects belonging to the specified organization (applies to all the objects that can be assigned to an organization). |
@@ -26,7 +29,6 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 ## Example Playbook
 
 ```yaml
----
 - hosts: all
   connection: local
   gather_facts: false
@@ -200,9 +202,3 @@ GPLv3+
 ## Author Information
 
 - [Ivan Aragonés](https://github.com/ivarmu)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK

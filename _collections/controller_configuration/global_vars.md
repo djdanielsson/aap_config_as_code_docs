@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # controller_configuration.global_vars
 
 ## Description
@@ -19,13 +23,11 @@ dependencies:
 This is currently providing the following variables:
 
 | Variable Name | Default Value | Required | Description |
-|:---|:---:|:---:|:---|
 | `operation_translate` | [See the default value below](#operation_translate-default-value) | Yes | Provides translation from object states to human interpretation |
 
 ### operation_translate Default value
 
 ```yaml
----
 operation_translate:
   present:
     verb: "Create/Update"
@@ -43,9 +45,3 @@ operation_translate:
 ## Author
 
 [Ivan Aragonés](https://github.com/ivarmu)
-
-# BEGIN ANSIBLE MANAGED BLOCK
----
-layout: default
----
-# END ANSIBLE MANAGED BLOCK
