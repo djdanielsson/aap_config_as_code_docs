@@ -1,6 +1,7 @@
 ---
 ---
 ---
+---
 # controller_configuration.global_vars
 
 ## Description

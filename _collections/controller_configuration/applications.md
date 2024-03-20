@@ -1,6 +1,7 @@
 ---
 ---
 ---
+---
 # controller_configuration.applications
 
 ## Description

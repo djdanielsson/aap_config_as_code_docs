@@ -1,6 +1,7 @@
 ---
 ---
 ---
+---
 # controller_configuration.filetree_read
 
 An ansible role which reads variables from a hierarchical and scalable directory structure which is grouped based on the configuration code life-cycle. It could be used to run the role filetree_read to load variables followed by dispatch role to apply the configuration.
