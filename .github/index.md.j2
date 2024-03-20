@@ -38,7 +38,7 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
 {% for each in controller_config %}
-* [{{ each }}](collections/controller_configuration/{{ each | replace('.md', '.html' }})
+* [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html' }})
 {% endfor %}
 
 [appendix]
