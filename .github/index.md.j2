@@ -40,23 +40,23 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
 {% for each in controller_config | sort %}
-* [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
+* [{{ each }}](collections/controller_configuration/{{ each }})
 {% endfor %}
 
 % for each in galaxy_collection | sort %}
-* [{{ each }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
+* [{{ each }}](collections/galaxy_collection/{{ each }})
 {% endfor %}
 
 % for each in eda_config | sort %}
-* [{{ each }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
+* [{{ each }}](collections/eda_config/{{ each }})
 {% endfor %}
 
 % for each in aap_utilities | sort %}
-* [{{ each }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
+* [{{ each }}](collections/aap_utilities/{{ each }})
 {% endfor %}
 
 % for each in ee_utilities | sort %}
-* [{{ each }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
+* [{{ each }}](collections/ee_utilities/{{ each }})
 {% endfor %}
 
 [appendix]
