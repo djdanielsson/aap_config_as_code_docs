@@ -1,5 +1,3 @@
----
----
 
 # infra.aap_utilities.aap_remove
 

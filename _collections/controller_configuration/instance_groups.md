@@ -1,4 +1,3 @@
----
 # controller_configuration.instance_groups
 
 ## Description

@@ -1,5 +1,3 @@
----
----
 
 # infra.aap\_utilities.kerberos
 

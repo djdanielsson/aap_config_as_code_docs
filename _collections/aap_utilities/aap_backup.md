@@ -1,7 +1,5 @@
----
----
 
-# infra.aap\_utilities.backup
+# infra.aap_utilities.backup
 
 Ansible role to backup Ansible Automation Platform.
 

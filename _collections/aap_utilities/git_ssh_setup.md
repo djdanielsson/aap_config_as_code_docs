@@ -1,7 +1,5 @@
----
----
 
-# infra.aap\_utilities.git\_ssh\_setup
+# infra.aap_utilities.git_ssh_setup
 
 Creates a minimal Git server which can be used over SSH. It isn't meant as a full blown Git server,
 but just for demonstration and learning purposes, and can be installed directly on the AAP servers.

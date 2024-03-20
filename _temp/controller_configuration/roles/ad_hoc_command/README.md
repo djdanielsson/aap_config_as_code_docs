@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
----
----
-<<<<<<< HEAD
->>>>>>> b489551cb80a4c1612abddf52088ea207776db61
 
 # controller_configuration.ad_hoc_command
 

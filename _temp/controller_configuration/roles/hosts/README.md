@@ -1,4 +1,3 @@
----
 # controller_configuration.hosts
 
 ## Description
