@@ -10,6 +10,18 @@
         suffix: temp
       register: r_tempfile
 
+    - name: Create directories
+      ansible.builtin.file:
+        path: "{{ r_tempfile['path'] }}/{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - controller_configuration
+        - galaxy_collection
+        - eda_configuration
+        - aap_utilities
+        - ee_utilities
+
     - name: Clone controller_configuration
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/controller_configuration.git
@@ -20,28 +32,28 @@
     - name: Clone galaxy_collection
       ansible.builtin.git:
         repo: https://github.com/ansible/galaxy_collection.git
-        dest: "{{ r_tempfile['path'] }}/"
+        dest: "{{ r_tempfile['path'] }}/galaxy_collection"
         single_branch: true
         version: devel
 
     - name: Clone eda_configuration
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/eda_configuration.git
-        dest: "{{ r_tempfile['path'] }}/"
+        dest: "{{ r_tempfile['path'] }}/eda_configuration"
         single_branch: true
         version: devel
 
     - name: Clone aap_utilities
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/aap_utilities.git
-        dest: "{{ r_tempfile['path'] }}/"
+        dest: "{{ r_tempfile['path'] }}/aap_utilities"
         single_branch: true
         version: devel
 
     - name: Clone ee_utilities
       ansible.builtin.git:
         repo: https://github.com/redhat-cop/ee_utilities.git
-        dest: "{{ r_tempfile['path'] }}/"
+        dest: "{{ r_tempfile['path'] }}/ee_utilities"
         single_branch: true
         version: devel
 
