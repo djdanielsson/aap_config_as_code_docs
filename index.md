@@ -39,6 +39,7 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)|Ansible Automation Platform Utilities
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
+### Controller Configuration:
 * [ad_hoc_command.md](collections/controller_configuration/ad_hoc_command.html)
 * [ad_hoc_command_cancel.md](collections/controller_configuration/ad_hoc_command_cancel.html)
 * [applications.md](collections/controller_configuration/applications.html)
@@ -77,6 +78,7 @@ NOTE: Further documentation for these collections will be stored here.
 * [workflow_job_templates.md](collections/controller_configuration/workflow_job_templates.html)
 * [workflow_launch.md](collections/controller_configuration/workflow_launch.html)
 
+### Ansible Hub Configuration:
 * [ansible_config.md](collections/galaxy_collection/ansible_config.html)
 * [collection.md](collections/galaxy_collection/collection.html)
 * [collection_remote.md](collections/galaxy_collection/collection_remote.html)
@@ -99,10 +101,12 @@ NOTE: Further documentation for these collections will be stored here.
 * [role.md](collections/galaxy_collection/role.html)
 * [user.md](collections/galaxy_collection/user.html)
 
+### Event Driven Ansible Configuration:
 * [credential.md](collections/eda_config/credential.html)
 * [project.md](collections/eda_config/project.html)
 * [project_sync.md](collections/eda_config/project_sync.html)
 
+### AAP Installation Utilities:
 * [aap_backup.md](collections/aap_utilities/aap_backup.html)
 * [aap_certs.md](collections/aap_utilities/aap_certs.html)
 * [aap_ocp_install.md](collections/aap_utilities/aap_ocp_install.html)
@@ -114,6 +118,7 @@ NOTE: Further documentation for these collections will be stored here.
 * [git_ssh_setup.md](collections/aap_utilities/git_ssh_setup.html)
 * [kerberos.md](collections/aap_utilities/kerberos.html)
 
+### Execution Environment Utilities:
 * [ee_builder.md](collections/ee_utilities/ee_builder.html)
 * [virtualenv_migrate.md](collections/ee_utilities/virtualenv_migrate.html)
 
@@ -123,7 +128,7 @@ We welcome community contributions to this documentation, or any of the mentione
 
 We have a community meeting every 4 weeks. Find the agenda in the issues and the calendar invitation below:
 
-[![Calendar](https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif)(https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics)]
+[[Calendar](https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif)(https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics)]
 
 ## Code of Conduct
 
