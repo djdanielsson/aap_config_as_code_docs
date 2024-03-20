@@ -24,19 +24,18 @@ We are on the Ansible Forums and Matrix, if you want to discuss something, ask f
 NOTE: Further documentation for these collections will be stored here.
 
 .Links to Ansible Automation Platform Collections
-
 |Collection Name|Purpose|
 |---------|---------|
-|[awx.awx/Ansible.controller repo](https://github.com/ansible/awx/tree/devel/awx_collection)|Automation controller modules|
-|[Ansible Hub Configuration](https://github.com/ansible/automation_hub_collection)|Automation hub configuration|
+|[awx.awx/Ansible.controller repo](https://github.com/ansible/awx/tree/devel/awx_collection)|Automation controller modules
+|[Ansible Hub Configuration](https://github.com/ansible/automation_hub_collection)|Automation hub configuration
 
 .Links to other Validated Configuration Collections for Ansible Automation Platform
 |Collection Name|Purpose|
 |---------|---------|
-|[Controller Configuration](https://github.com/redhat-cop/controller_configuration)|Automation controller configuration|
-|[EE Utilities](https://github.com/redhat-cop/ee_utilities)|Execution Environment creation utilities|
-|[AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)|Ansible Automation Platform Utilities|
-|[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite|
+|[Controller Configuration](https://github.com/redhat-cop/controller_configuration)|Automation controller configuration
+|[EE Utilities](https://github.com/redhat-cop/ee_utilities)|Execution Environment creation utilities
+|[AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)|Ansible Automation Platform Utilities
+|[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
 * [ad_hoc_command.md](collections/controller_configuration/ad_hoc_command.html)
 * [ad_hoc_command_cancel.md](collections/controller_configuration/ad_hoc_command_cancel.html)
@@ -82,13 +81,14 @@ We welcome community contributions to this documentation, or any of the mentione
 
 We have a community meeting every 4 weeks. Find the agenda in the issues and the calendar invitation below:
 
-[![Calendar](https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif)(https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics)]
+[link#https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics]
+image::https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif[Google Calendar Invite,80,20]
 
 [appendix]
 ## Code of Conduct
 
 This repository follows the Ansible project's
-[Code of Conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html).
+https://docs.ansible.com/ansible/latest/community/code_of_conduct.html[Code of Conduct].
 Please read and familiarize yourself with this document.
 
 [appendix]
