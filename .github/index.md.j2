@@ -37,7 +37,7 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)|Ansible Automation Platform Utilities
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
-{% for each in controller_config %}
+{% for each in controller_config | sort %}
 * [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 
