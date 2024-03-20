@@ -41,31 +41,31 @@ NOTE: Further documentation for these collections will be stored here.
 
 {% if controller_config is defined %}
 {% for each in controller_config | sort %}
-* [{{ each }}](collections/controller_configuration/{{ each }})
+* [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if galaxy_collection is defined %}
 {% for each in galaxy_collection | sort %}
-* [{{ each }}](collections/galaxy_collection/{{ each }})
+* [{{ each }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if eda_config is defined %}
 {% for each in eda_config | sort %}
-* [{{ each }}](collections/eda_config/{{ each }})
+* [{{ each }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if aap_utilities is defined %}
 {% for each in aap_utilities | sort %}
-* [{{ each }}](collections/aap_utilities/{{ each }})
+* [{{ each }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if ee_utilities is defined %}
 {% for each in ee_utilities | sort %}
-* [{{ each }}](collections/ee_utilities/{{ each }})
+* [{{ each }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 

@@ -57,9 +57,20 @@
         single_branch: true
         version: devel
 
+    - name: Get collections
+      ansible.builtin.find:
+        path: "{{ r_tempfile.path }}"
+        file_type: directory
+      register: r_directories
+
+    - name: Set collections
+      ansible.builtin.set_fact:
+        collection_list: "{{ collection_list | default([]) + [item | ansible.builtin.basename] }}"
+      loop: "{{ r_directories['files'] | map(attribute='path') | flatten }}"
+
     - name: Loop through each collection
       ansible.builtin.include_tasks: fix_readme.yml
-      loop: "{{ lookup('ansible.builtin.fileglob', r_tempfile['path'], wantlist=True) }}"
+      loop: "{{ collection_list }}"
       loop_control:
         loop_var: outer_item
 

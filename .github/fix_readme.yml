@@ -1,4 +1,20 @@
 ---
+- name: Set collections
+  ansible.builtin.set_fact:
+    roles_list: []
+    r_roles: []
+
+- name: Get collections
+  ansible.builtin.find:
+    path: "{{ r_tempfile.path }}/{{ outer_item}}/roles/"
+    file_type: directory
+  register: r_roles
+
+- name: Set collections
+  ansible.builtin.set_fact:
+    roles_list: "{{ roles_list | default([]) + [item | ansible.builtin.basename] }}"
+  loop: "{{ r_roles['files'] | map(attribute='path') | flatten }}"
+
 - name: Update readme
   ansible.builtin.blockinfile:
     path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
@@ -7,12 +23,13 @@
       ---
       layout: default
       ---
-  loop: "{{ lookup('ansible.builtin.fileglob', '{{ r_tempfile.path }}/{{ outer_item }}/roles/', wantlist=True) }}"
+  loop: "{{ roles_list }}"
 
 - name: Copy and rename readme
   ansible.builtin.copy:
-    remote_src: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
+    src: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
     dest: "../_collections/{{ outer_item }}/{{ item }}.html"
+    remote_src: true
     mode: "0644"
-  loop: "{{ lookup('ansible.builtin.fileglob', '{{ r_tempfile.path }}/{{ outer_item }}/roles/', wantlist=True) }}"
+  loop: "{{ roles_list }}"
 ...
