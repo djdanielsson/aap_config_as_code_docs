@@ -1,5 +1,4 @@
----
----
+
 
 # controller_configuration.object_diff
 
