@@ -15,6 +15,13 @@
     roles_list: "{{ roles_list | default([]) + [item | ansible.builtin.basename] }}"
   loop: "{{ r_roles['files'] | map(attribute='path') | flatten }}"
 
+- name: Cleanup readme
+  ansible.builtin.lineinfile:
+    path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
+    regex: '---'
+    state: absent
+  loop: "{{ roles_list }}"
+
 - name: Update readme
   ansible.builtin.lineinfile:
     path: "{{ r_tempfile['path'] }}/{{ outer_item }}/roles/{{ item }}/README.md"
