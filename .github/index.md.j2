@@ -39,25 +39,35 @@ NOTE: Further documentation for these collections will be stored here.
 |[AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)|Ansible Automation Platform Utilities
 |[AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)|Configuration Template for this suite
 
+{% if controller_config is defined %}
 {% for each in controller_config | sort %}
 * [{{ each }}](collections/controller_configuration/{{ each }})
 {% endfor %}
+{% endif %}
 
+{% if galaxy_collection is defined %}
 {% for each in galaxy_collection | sort %}
 * [{{ each }}](collections/galaxy_collection/{{ each }})
 {% endfor %}
+{% endif %}
 
+{% if eda_config is defined %}
 {% for each in eda_config | sort %}
 * [{{ each }}](collections/eda_config/{{ each }})
 {% endfor %}
+{% endif %}
 
+{% if aap_utilities is defined %}
 {% for each in aap_utilities | sort %}
 * [{{ each }}](collections/aap_utilities/{{ each }})
 {% endfor %}
+{% endif %}
 
+{% if ee_utilities is defined %}
 {% for each in ee_utilities | sort %}
 * [{{ each }}](collections/ee_utilities/{{ each }})
 {% endfor %}
+{% endif %}
 
 [appendix]
 ## Contributing to this Documentation
