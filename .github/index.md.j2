@@ -43,6 +43,22 @@ NOTE: Further documentation for these collections will be stored here.
 * [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 
+% for each in galaxy_collection | sort %}
+* [{{ each }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
+{% endfor %}
+
+% for each in eda_config | sort %}
+* [{{ each }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
+{% endfor %}
+
+% for each in aap_utilities | sort %}
+* [{{ each }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
+{% endfor %}
+
+% for each in ee_utilities | sort %}
+* [{{ each }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
+{% endfor %}
+
 [appendix]
 ## Contributing to this Documentation
 We welcome community contributions to this documentation, or any of the mentioned collections. If you find problems, please open an issue and consider creating a PR against this, or any relevant, repository. More information about contributing can be found in our link:CONTRIBUTE.adoc[Contribution Guidelines].
