@@ -1,6 +1,5 @@
 ---
 ---
----
 # controller_configuration.bulk_host_create
 
 ## Description
