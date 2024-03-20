@@ -1,5 +1,4 @@
 ---
-
 # controller_configuration.bulk_host_create
 
 ## Description
@@ -16,7 +15,15 @@ Currently:
 
 ## Variables
 
-
+|Variable Name|Default Value|Required|Description|Example|
+|:---|:---:|:---:|:---|:---|
+|`controller_hostname`|""|yes|URL to the Ansible Controller Server.|127.0.0.1|
+|`controller_validate_certs`|`True`|no|Whether or not to validate the Ansible Controller Server's SSL certificate.||
+|`controller_username`|""|no|Admin User on the Ansible Controller Server. Either username / password or oauthtoken need to be specified.||
+|`controller_password`|""|no|Controller Admin User's password on the Ansible Controller Server. This should be stored in an Ansible Vault at vars/controller-secrets.yml or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_oauthtoken`|""|no|Controller Admin User's token on the Ansible Controller Server. This should be stored in an Ansible Vault at or elsewhere and called from a parent playbook. Either username / password or oauthtoken need to be specified.||
+|`controller_request_timeout`|`10`|no|Specify the timeout in seconds Ansible should use in requests to the controller host.||
+|`controller_configuration_bulk_hosts_secure_logging`|`see below`|yes|Data structure describing your organization or organizations Described below.||
 
 ### Secure Logging Variables
 
@@ -25,7 +32,10 @@ If Both variables are not set, secure logging defaults to false.
 The role defaults to False as normally the add ******* task does not include sensitive information.
 controller_configuration_*******_secure_logging defaults to the value of controller_configuration_secure_logging if it is not explicitly called. This allows for secure logging to be toggled for the entire suite of controller configuration roles with a single variable, or for the user to selectively use it.
 
-
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_bulk_hosts_secure_logging`|`False`|no|Whether or not to include the sensitive ******* role tasks in the log. Set this value to `True` if you will be providing your sensitive values from elsewhere.|
+|`controller_configuration_secure_logging`|`False`|no|This variable enables secure logging as well, but is shared across multiple roles, see above.|
 
 ### Asynchronous Retry Variables
 
@@ -34,16 +44,32 @@ If neither of the retries or delay or retries are set, they will default to thei
 This allows for all items to be created, then checked that the task finishes successfully.
 This also speeds up the overall role.
 
-
+|Variable Name|Default Value|Required|Description|
+|:---:|:---:|:---:|:---:|
+|`controller_configuration_async_retries`|30|no|This variable sets the number of retries to attempt for the role globally.|
+|`controller_configuration_bulk_hosts_async_retries`|`{{ controller_configuration_async_retries }}`|no|This variable sets the number of retries to attempt for the role.|
+|`controller_configuration_async_delay`|1|no|This sets the delay between retries for the role globally.|
+|`controller_configuration_bulk_hosts_async_delay`|`controller_configuration_async_delay`|no|This sets the delay between retries for the role.|
+|`controller_configuration_async_dir`|`null`|no|Sets the directory to write the results file for async tasks. The default value is set to `null` which uses the Ansible Default of `/root/.ansible_async/`.|
 
 ## Data Structure
 
 ### Bulk Host Variables
 
+|Variable Name|Default Value|Required|Type|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|`hosts`|""|yes|list|List of hosts and host options to add to inventory. Documented below|
+|`inventory`|""|yes|str|Inventory name or ID the hosts should be made a member of.|
 
 ### Bulk Host Sub Options
 
-
+|Variable Name|Default Value|Required|Type|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|`name`|""|no|list|The name to use for the host.|
+|`description`|""|no|str|The description to use for the host.|
+|`enabled`|""|no|bool|If the host should be enabled.|
+|`variables`|""|no|dict|Variables to use for the host.|
+|`instance`|""|no|list|instance to use for the host.|
 
 ### Standard Bulk Host Data Structure
 
