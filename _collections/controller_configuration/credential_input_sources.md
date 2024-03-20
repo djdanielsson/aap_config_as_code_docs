@@ -1,8 +1,4 @@
----
----
----
----
----
+
 # controller_configuration.credential_input_sources
 
 ## Description

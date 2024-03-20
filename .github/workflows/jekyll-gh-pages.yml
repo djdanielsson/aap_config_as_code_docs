@@ -45,6 +45,8 @@ jobs:
         run: pip install ansible-core
       - name: Run Ansible
         run: cd .github; ansible-playbook playbook.yml
+      - name: Bundle install
+        run: bundle install
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll

@@ -1,8 +1,4 @@
----
----
----
----
----
+
 # controller_configuration.job_launch
 
 ## Description

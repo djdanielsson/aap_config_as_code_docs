@@ -1,8 +1,4 @@
----
----
----
----
----
+
 # controller_configuration.teams
 
 ## Description
