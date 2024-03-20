@@ -1,5 +1,6 @@
+---
 
-# infra.aap_utilities.aap_setup_prepare
+# infra.aap_utilities.aap\_setup\_prepare
 
 A role to prepare the installation of AAP 2.x, installing pre-requisites,
 unpacking the installation tarball and (optionally) writing the necessary inventory file.
