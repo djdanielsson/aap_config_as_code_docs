@@ -1,5 +1,5 @@
 ---
-
+layout: default
 ---
 
 # controller_configuration.instance_groups

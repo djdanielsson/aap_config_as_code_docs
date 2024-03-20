@@ -1,5 +1,5 @@
 ---
-
+layout: default
 ---
 
 # infra.aap_utilities.git_ssh_setup

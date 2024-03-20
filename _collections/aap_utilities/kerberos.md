@@ -1,5 +1,5 @@
 ---
-
+layout: default
 ---
 
 # infra.aap_utilities.kerberos
