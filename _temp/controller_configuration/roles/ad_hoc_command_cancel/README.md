@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
----
----
-
->>>>>>> 01090549bc3e8596e093e349d2a63f088e83b429
 # controller_configuration.ad_hoc_command_cancel
 
 ## Description
