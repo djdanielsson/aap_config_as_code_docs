@@ -42,35 +42,35 @@ Links to other Validated Configuration Collections for Ansible Automation Platfo
 {% if controller_config is defined %}
 ### Controller Configuration:
 {% for each in controller_config | sort %}
-* [{{ each }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
+* [{{ each | regex_replace('.md', '') }}](collections/controller_configuration/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if galaxy_collection is defined %}
 ### Ansible Hub Configuration:
 {% for each in galaxy_collection | sort %}
-* [{{ each }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
+* [{{ each | regex_replace('.md', '') }}](collections/galaxy_collection/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if eda_config is defined %}
 ### Event Driven Ansible Configuration:
 {% for each in eda_config | sort %}
-* [{{ each }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
+* [{{ each | regex_replace('.md', '') }}](collections/eda_config/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if aap_utilities is defined %}
 ### AAP Installation Utilities:
 {% for each in aap_utilities | sort %}
-* [{{ each }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
+* [{{ each | regex_replace('.md', '') }}](collections/aap_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
 {% if ee_utilities is defined %}
 ### Execution Environment Utilities:
 {% for each in ee_utilities | sort %}
-* [{{ each }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
+* [{{ each | regex_replace('.md', '') }}](collections/ee_utilities/{{ each | regex_replace('.md', '.html') }})
 {% endfor %}
 {% endif %}
 
