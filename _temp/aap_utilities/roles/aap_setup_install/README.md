@@ -1,6 +1,8 @@
 ---
 
-# infra.aap_utilities.aap\_setup\_install
+---
+
+# infra.aap_utilities.aap_setup_install
 
 A role to install AAP 2.x, installing pre-requisites, unpacking the installation tarball and (optionally) writing the necessary inventory file.
 

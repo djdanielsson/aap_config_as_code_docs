@@ -1,4 +1,7 @@
 ---
+
+---
+
 # controller_configuration.workflow_job_templates
 
 ## Description
