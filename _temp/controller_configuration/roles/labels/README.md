@@ -1,6 +1,7 @@
 ---
 ---
 ---
+---
 # controller_configuration.labels
 
 An Ansible role to create/update/remove labels for templates on Ansible Controller.

@@ -1,6 +1,7 @@
 ---
 ---
 ---
+---
 # infra.aap\_utilities.aap\_restore
 
 Ansible role to restore a backup of Ansible Automation Platform.
