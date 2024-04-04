@@ -1,0 +1,51 @@
+{"0": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Ansible Automation Platform Configuration as Code Collections",
+    "content": " ",
+    "url": "/aap_config_as_code_docs/",
+    
+    "relUrl": "/"
+  },"1": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Introduction",
+    "content": "Several collections have been created by the Red Hat Communities of Practice to assist with configuring aspects of the Ansible Automation Platform (AAP) using configuration as code practices. This site will guide you through these collections, the use cases, how to use and strategies for scaling appropriately. Where to get and maintain this document . This document is published to https://redhat-cop.github.io/aap_config_as_code_docs/, it is open source and its source code is maintained at https://github.com/redhat-cop/aap_config_as_code_docs/. ",
+    "url": "/aap_config_as_code_docs/#introduction",
+    
+    "relUrl": "/#introduction"
+  },"2": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Getting Help",
+    "content": "We are on the Ansible Forums and Matrix, if you want to discuss something, ask for help, or participate in the community, please use the #infra-config-as-code tag on the forum, or post to the chat in Matrix. Ansible Forums . Matrix Chat Room . ",
+    "url": "/aap_config_as_code_docs/#getting-help",
+    
+    "relUrl": "/#getting-help"
+  },"3": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "AAP Config as Code Collections",
+    "content": "NOTE: Further documentation for these collections will be stored here. Links to Ansible Automation Platform Collections . | Collection Name | Purpose | . | awx.awx/Ansible.controller repo | Automation controller modules | . | Ansible Hub Configuration | Automation hub configuration | . Links to other Validated Configuration Collections for Ansible Automation Platform . | Collection Name | Purpose | . | Controller Configuration | Automation controller configuration | . | EE Utilities | Execution Environment creation utilities | . | AAP installation Utilities | Ansible Automation Platform Utilities | . | AAP Configuration Template | Configuration Template for this suite | . Controller Configuration: . | ad_hoc_command | ad_hoc_command_cancel | applications | bulk_host_create | bulk_job_launch | credential_input_sources | credential_types | credentials | dispatch | execution_environments | filetree_create | filetree_read | global_vars | groups | hosts | instance_groups | instances | inventories | inventory_source_update | inventory_sources | job_launch | job_templates | jobs_cancel | labels | license | notification_templates | object_diff | organizations | project_update | projects | roles | schedules | settings | teams | users | workflow_job_templates | workflow_launch | . Ansible Hub Configuration: . | ansible_config | collection | collection_remote | collection_repository | collection_repository_sync | dispatch | ee_image | ee_namespace | ee_registry | ee_registry_index | ee_registry_sync | ee_repository | ee_repository_sync | group | group_roles | namespace | publish | repository | repository_sync | role | user | . Event Driven Ansible Configuration: . | credential | decision_environment | project | project_sync | rulebook_activation | user_token | . AAP Installation Utilities: . | aap_backup | aap_certs | aap_ocp_install | aap_remove | aap_restore | aap_setup_download | aap_setup_install | aap_setup_prepare | git_ssh_setup | kerberos | . Execution Environment Utilities: . | ee_builder | virtualenv_migrate | . ",
+    "url": "/aap_config_as_code_docs/#aap-config-as-code-collections",
+    
+    "relUrl": "/#aap-config-as-code-collections"
+  },"4": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Contributing to this Documentation",
+    "content": "We welcome community contributions to this documentation, or any of the mentioned collections. If you find problems, please open an issue and consider creating a PR against this, or any relevant, repository. More information about contributing can be found in our Contribution Guidelines. We have a community meeting every 4 weeks. Find the agenda in the issues and the calendar invitation below: . Calendar . ",
+    "url": "/aap_config_as_code_docs/#contributing-to-this-documentation",
+    
+    "relUrl": "/#contributing-to-this-documentation"
+  },"5": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Code of Conduct",
+    "content": "This repository follows the Ansible project’s Code of Conduct. Please read and familiarize yourself with this document. ",
+    "url": "/aap_config_as_code_docs/#code-of-conduct",
+    
+    "relUrl": "/#code-of-conduct"
+  },"6": {
+    "doc": "Ansible Automation Platform Configuration as Code Collections",
+    "title": "Licensing",
+    "content": "GNU General Public License v3.0 or later. See LICENSE to see the full text. ",
+    "url": "/aap_config_as_code_docs/#licensing",
+    
+    "relUrl": "/#licensing"
+  }
+}
