@@ -124,4 +124,8 @@ ah_collection_repositories:
 
 ## License
 
+<<<<<<< HEAD
 [GPLv3+](https://github.com/redhat-cop/ah_configuration#licensing)
+=======
+[GPLv3+](https://github.com/ansible/galaxy_collection#licensing)
+>>>>>>> 2f35dda37516cae26171e0891ad9e10026c24722

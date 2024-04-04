@@ -138,7 +138,11 @@ controller_applications:
 
 ## License
 
+<<<<<<< HEAD
 [MIT](https://github.com/redhat-cop/controller_configuration#licensing)
+=======
+[GPL-3.0](https://github.com/redhat-cop/controller_configuration#licensing)
+>>>>>>> 2f35dda37516cae26171e0891ad9e10026c24722
 
 ## Author
 
