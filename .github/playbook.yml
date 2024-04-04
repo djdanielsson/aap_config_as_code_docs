@@ -10,6 +10,18 @@
         suffix: temp
       register: r_tempfile
 
+    - name: Delete directories
+      ansible.builtin.file:
+        path: "_collections"
+        state: absent
+        mode: "0755"
+
+    - name: Create directories
+      ansible.builtin.file:
+        path: "_collections"
+        state: directory
+        mode: "0755"
+
     - name: Create directories
       ansible.builtin.file:
         path: "{{ r_tempfile['path'] }}/{{ item }}"
