@@ -24,6 +24,18 @@
 
     - name: Create directories
       ansible.builtin.file:
+        path: "./_collections/{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - controller_configuration
+        - galaxy_collection
+        - eda_configuration
+        - aap_utilities
+        - ee_utilities
+
+    - name: Create directories
+      ansible.builtin.file:
         path: "{{ r_tempfile['path'] }}/{{ item }}"
         state: directory
         mode: "0755"
